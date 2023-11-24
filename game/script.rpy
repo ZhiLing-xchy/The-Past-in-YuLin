@@ -2,13 +2,23 @@
 define kouliwen = Character("大司寇")
 define jiangyan = Character("蒋老师")
 
-label start:
-    """
-    本游戏剧情根据真实事件改编。
-    所有登场人物年龄均未满十八岁。
-    如有雷同，纯属故意。
-    """
+label splashscreen:
+    scene black
+    with Pause(1)
 
+    show text "本游戏剧情根据真实事件改编。" with dissolve
+    with Pause(2)
+
+    show text "所有登场人物年龄均未满十八岁\n如有雷同，纯属故意。" with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
+label start:
+    scene black
     "从睡梦中惊醒，我汗流浃背地看着一旁空洞洞的位置。"
 
     pengjingxiang "原来是梦吗。"
@@ -18,12 +28,17 @@ label start:
 
     """
     她认真的眼神真的很好看,\n
-    她身上的一切都牵动着我的心。
+    她身上的一切，都牵动着我的心。
     """
 
-    "为了不影响她的学习，我主动向老师提出了换位置。\n但她依然存在于我内心的最深处。"
+    "为了不影响她的学习，我主动向老师提出了换位置。\n尽管相隔但她依然存在于我内心的最深处。"
 
-    "(铃声)"
+    "(下课铃声)"
+    "这么快就下课了吗？"
+    "她这节课需不需要我给她讲题呢？"
+
+    #这里zzy起身离开（去厕所）
+    "正好有一会儿空闲时间，"
     "要不要找寇哥吐槽呢？"
     menu:
         "寇哥见识广，可以开导我。":
@@ -36,12 +51,18 @@ label end1:
     "还是找他聊聊吧。"
     pengjingxiang "寇哥。"
     kouliwen "嗯？"
+    #这句我加的
+    "不过，\n似乎有人说寇哥是出名的大嘴巴，他会不会给别人说呢？"
     "寇哥脑袋朝天，戴着校服帽，眼皮尽力地往上拉扯，手中的黑笔还在不断地滑动。"
+
+
+    ###视角放大向寇哥
     "看起来不太靠谱，到底要不要找他倾诉呢？"
     menu:
         "坚持到底":
             "寇哥看起来很靠谱，可以问问看。"
         "还是算了吧":
+            with dissolve
             jump chapter_0
     pengjingxiang "寇哥，我还是忘不了她，怎么办。"
     "寇哥听到我说话，脑袋往右边拧了一下，嘴巴里只蹦出一个字……"
@@ -64,12 +85,13 @@ label end1:
     jiangyan "高考的胜利就是给那些能够摒除干扰的人。"
     jiangyan "而且你身为班级的领头羊，要起表率作用，同学们都追着你的脚步的。"
     jiangyan """
-    ………………。
+    ………………。\n
     ………。
     """
     "蒋老师奚落了我半个小时，从此我一心一意学习，成为了玉林中学第二个理科状元……"
-    "才怪！"
-    
+    "可喜可贺，可喜可贺。"
+    "…………\n才怪！"
+    with pixlellate
     "触发Bad Ending 1：“现在是幻想时间”"
     
     return
