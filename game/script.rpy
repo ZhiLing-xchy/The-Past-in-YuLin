@@ -1,20 +1,23 @@
-﻿define pengjingxiang = Character("PJ")
-define kouliwen = Character("大司寇")
-define jiangyan = Character("蒋老师")
+﻿define pengjingxiang = Character("PJ",who_prefix = "【",who_suffix="】",what_prefix="\"",what_suffix="\"")
+define kouliwen = Character("大司寇",who_prefix = "【",who_suffix="】",what_prefix="\"",what_suffix="\"")
+define jiangyan = Character("蒋老师",who_prefix = "【",who_suffix="】",what_prefix="\"",what_suffix="\"")
 
-label splashscreen:
+$ notFinish = True
+image splash_bg = "images/splashscreen-warning.png"
+label before_main_menu:
     scene black
     with Pause(0.5)
 
-    show text "本游戏剧情根据真实事件改编。" with dissolve
-    with Pause(1.5)
+    show text "{size=50}本游戏剧情根据真实事件改编。{/size}" with dissolve
+    #show splash_bg with dissolve 
+    #with Pause(3)
 
-    show text "所有登场人物年龄均未满十八岁\n如有雷同，纯属故意。" with dissolve
+    show text "{size=40}所有登场人物年龄均未满十八岁\n如有雷同，纯属故意。{/size}" with dissolve
     with Pause(2)
 
 #    show text "qi" with dissolve
 
-    hide text with dissolve
+    hide splash_bg with dissolve
     with Pause(1)
 
     return
@@ -24,28 +27,34 @@ label start:
 
     scene black
     "从睡梦中惊醒，我汗流浃背地看着一旁空洞洞的位置。"
-
+    show classroom_by_wenxinyiyan with dissolve
     pengjingxiang "原来是梦吗。"
+    show persion exaple
     pengjingxiang "啊……"
 
     "我向后看了那个位置一眼，她还在认真地听课。"
 
     """
-    她认真的眼神真的很好看,\n
+    她认真的眼神真的很好看,{p}
     她身上的一切，都牵动着我的心。
     """
 
-    "为了不影响她的学习，我主动向老师提出了换位置。\n尽管相隔但她依然存在于我内心的最深处。"
+    """
+    为了不影响她的学习，我主动向老师提出了换位置。{p}尽管相隔但她依然存在于我内心的最深处。
+    """
 
-    "…………" with dissolve
+    "…………"
 
     "(下课铃声)"
     "这么快就下课了吗？"
     "她这节课需不需要我给她讲题呢？"
 
     #这里zzy起身离开（去厕所）
-    "正好有一会儿空闲时间，"
-    "要不要找寇哥吐槽呢？"
+    hide persion example with dissolve
+    """
+    正好有一会儿空闲时间，{p}
+    要不要找寇哥吐槽呢？
+    """
     menu:
         "寇哥见识广，可以开导我。":
             jump end1
@@ -60,7 +69,7 @@ label end1:
 
     
     #这句我加的
-    "不过，\n似乎有人说寇哥是出名的大嘴巴，他会不会给别人说呢？"
+    "不过，{p}似乎有人说寇哥是出名的大嘴巴，他会不会给别人说呢？"
 
     "寇哥脑袋朝天，戴着校服帽，眼皮尽力地往上拉扯，手中的黑笔还在不断地滑动。"
 
@@ -97,7 +106,7 @@ label end1:
     jiangyan "高考的胜利就是给那些能够摒除干扰的人的。"
     jiangyan "而且你身为班级的领头羊，要起表率作用，同学们都追着你的脚步的。" with dissolve
     jiangyan """
-    ………………。\n
+    ………………。{p}
     ………。
     """
     "蒋老师奚落了我半个小时，从此我一心一意学习，成为了玉林中学第二个理科状元……" with dissolve
@@ -110,6 +119,7 @@ label end1:
 
 label chapter_0:
     "晚自习"
-    
+    if notFinish:
+        show text "{size=40}试玩到此结束\n{size=20}（这不就是啥都没写吗？）{/size}{/size}"
     return
 
