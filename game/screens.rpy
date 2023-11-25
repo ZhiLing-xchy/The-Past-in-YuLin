@@ -539,7 +539,7 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
+            label "{size=*1.3}[config.name!t]{/size}"
             text _("版本 [config.version!t]\n")
 
             ## gui.about 通常在 options.rpy 中设置。

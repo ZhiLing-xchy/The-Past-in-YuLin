@@ -56,31 +56,31 @@ define gui.interface_text_color = '#ffffff'
 ## 字体和字体大小 #####################################################################
 
 ## 游戏内文本使用的字体。
-define gui.text_font = "SourceHanSansLite.ttf"
+define gui.text_font = "Alibaba-PuHuiTi-Regular.ttf"
 
 ## 角色名称使用的字体。
-define gui.name_text_font = "SourceHanSansLite.ttf"
+define gui.name_text_font = "Alibaba-PuHuiTi-Medium.ttf"
 
 ## 游戏外文本使用的字体。
-define gui.interface_text_font = "SourceHanSansLite.ttf"
+define gui.interface_text_font = "Alibaba-PuHuiTi-Regular.ttf"
 
 ## 普通对话文本的大小。
-define gui.text_size = 33
+define gui.text_size = 32
 
 ## 角色名称的大小。
-define gui.name_text_size = 45
+define gui.name_text_size = 42
 
 ## 游戏用户界面中文本的大小。
-define gui.interface_text_size = 33
+define gui.interface_text_size = 38
 
 ## 游戏用户界面中标签的大小。
-define gui.label_text_size = 36
+define gui.label_text_size = 44
 
 ## 通知屏幕上文本的大小。
-define gui.notify_text_size = 24
+define gui.notify_text_size = 60
 
 ## 游戏标题的大小。
-define gui.title_text_size = 75
+define gui.title_text_size = 90
 
 
 ## 标题和游戏菜单 #####################################################################
